@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FightFraud.Web", "FightFraud.Web\FightFraud.Web.csproj", "{88169777-1790-46A8-B38E-5C00DE408427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightFraud.Application", "FlightFraud.Application\FlightFraud.Application.csproj", "{F52E7B1B-98D5-45D1-914D-F5ADDC93484F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightFraud.Domain", "FlightFraud.Domain\FlightFraud.Domain.csproj", "{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightFraud.Infrastructure", "FlightFraud.Infrastructure\FlightFraud.Infrastructure.csproj", "{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Ports", "1 - Ports", "{06031065-5BE1-43A0-90AF-9D805AD9C694}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{050FF184-0BFA-4D8A-A183-1706C633C0FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Infrastructure", "2 - Infrastructure", "{7DC02DBC-94BB-4EA9-8BE6-B4FEF84D631E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{476FD4E5-1427-4BAD-A30A-F4B448477A21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88169777-1790-46A8-B38E-5C00DE408427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88169777-1790-46A8-B38E-5C00DE408427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88169777-1790-46A8-B38E-5C00DE408427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88169777-1790-46A8-B38E-5C00DE408427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F52E7B1B-98D5-45D1-914D-F5ADDC93484F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F52E7B1B-98D5-45D1-914D-F5ADDC93484F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F52E7B1B-98D5-45D1-914D-F5ADDC93484F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F52E7B1B-98D5-45D1-914D-F5ADDC93484F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{88169777-1790-46A8-B38E-5C00DE408427} = {06031065-5BE1-43A0-90AF-9D805AD9C694}
+		{F52E7B1B-98D5-45D1-914D-F5ADDC93484F} = {050FF184-0BFA-4D8A-A183-1706C633C0FC}
+		{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7} = {476FD4E5-1427-4BAD-A30A-F4B448477A21}
+		{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B} = {7DC02DBC-94BB-4EA9-8BE6-B4FEF84D631E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1D88506-EAE6-4BFA-9956-6E96A6E50531}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,43 @@
+<h1 id="tableLabel">Add person</h1>
+
+<p>Please inform the Person* info:</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <label for="lastNameSamePercent">When Last Name is the same</label>
+    </div>
+    <div class="col-9">
+      <input type="number" id="lastNameSamePercent" [(ngModel)]="matchingRule.lastNameSamePercent" min="0" max="100" />%
+    </div>
+    <div class="col-3">
+      <label for="firstNameSamePercent">When First Name is the same</label>
+    </div>
+    <div class="col-9">
+      <input type="number" id="firstNameSamePercent" [(ngModel)]="matchingRule.firstNameSamePercent" min="0" max="100" />%
+    </div>
+    <div class="col-3">
+      <label for="firstNameSimilarPercent">When First Name is similar</label>
+    </div>
+    <div class="col-9">
+      <input type="number" id="firstNameSimilarPercent" [(ngModel)]="matchingRule.firstNameSimilarPercent" min="0" max="100" />%
+    </div>
+    <div class="col-3">
+      <label for="dateOfBirthSamePercent">When Date of birth matches</label>
+    </div>
+    <div class="col-9">
+      <input type="number" id="dateOfBirthSamePercent" [(ngModel)]="matchingRule.dateOfBirthSamePercent" min="0" max="100" />%
+    </div>
+    <div class="col-9">
+      <span>* When <b>Identification number matches</b> it has to be the same person.</span><br />
+      <span>* When <b>dates of birth are known and not the same</b> it can't be another person.</span>
+    </div>
+
+    <div class="col-9">
+      <button class="btn btn-primary" (click)="saveMatchingRules()">Save</button>
+    </div>
+  </div>
+</div>
+
+

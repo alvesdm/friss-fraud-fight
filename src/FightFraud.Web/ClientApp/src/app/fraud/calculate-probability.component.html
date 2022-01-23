@@ -1,0 +1,46 @@
+<h1 id="tableLabel">Calculate fraud probability</h1>
+
+<p>Please inform the Person info in order to calculate the fraud probability:</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <label for="firstName">First Name</label>
+    </div>
+    <div class="col-9">
+      <input type="text" id="firstName" [(ngModel)]="person.firstName" />
+    </div>
+    <div class="col-3">
+      <label for="lastName">Last Name</label>
+    </div>
+    <div class="col-9">
+      <input type="text" id="lastName" [(ngModel)]="person.lastName" />
+    </div>
+    <div class="col-3">
+      <label for="dateOfBirth">Date of Birth</label>
+    </div>
+    <div class="col-9">
+      <input type="text" id="dateOfBirth" [(ngModel)]="person.dateOfBirth" placeholder="dd/mm/yyyy" />
+    </div>
+    <div class="col-3">
+      <label for="identificationNumber">Identification Number</label>
+    </div>
+    <div class="col-9">
+      <input type="text" id="identificationNumber" [(ngModel)]="person.identificationNumber" />
+    </div>
+
+    <div class="col-9">
+      <button class="btn btn-primary" (click)="calculateFraudProbability()">Calculate</button>
+    </div>
+
+    <div class="col-9">
+      <div class="alert alert-primary" role="alert">
+        {{ statusMessage }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
