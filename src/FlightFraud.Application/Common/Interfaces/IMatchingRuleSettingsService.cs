@@ -2,7 +2,7 @@
 using FightFraud.Domain.Entities;
 using System.Threading.Tasks;
 
-namespace FightFraud.Application.Fraud.Services
+namespace FightFraud.Application.Common.Interfaces
 {
     public interface IMatchingRuleSettingsService
     {

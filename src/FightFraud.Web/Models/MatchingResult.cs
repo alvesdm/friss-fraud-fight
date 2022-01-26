@@ -1,4 +1,4 @@
-﻿namespace FightFraud.Web.Controllers
+﻿namespace FightFraud.Web.Models
 {
     public class MatchingResult
     {

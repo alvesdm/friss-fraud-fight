@@ -8,8 +8,6 @@ namespace FightFraud.Infrastructure.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<MatchingRuleSettings> builder)
         {
-            //builder.HasNoKey();
-
             builder.Property(t => t.DateOfBirthSamePercent)
                 .IsRequired();
             builder.Property(t => t.FirstNameSimilarPercent)

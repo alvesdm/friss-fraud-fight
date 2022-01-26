@@ -24,7 +24,7 @@ namespace FightFraud.Application.Fraud.Services.NameMatchingCalculatorImplementa
             throw new NotImplementedException();
 
             /*
-             * For simplicity I've decided to use EF InMemory db and it seems like we can't to much extensions in it.
+             * For simplicity I've decided to use EF InMemory db and it seems like we can't do much extensions in it.
              * in order to use SQL DIFFERENCE() function I believe the best approach would be to create an SP
              * that would then perform the query using it on it's search criteria.
              * 

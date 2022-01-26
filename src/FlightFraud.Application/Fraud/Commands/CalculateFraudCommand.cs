@@ -1,6 +1,5 @@
 ﻿using FightFraud.Application.Common.Interfaces;
 using FightFraud.Application.Fraud.Results;
-using FightFraud.Application.Fraud.Services;
 using FightFraud.Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.Logging;

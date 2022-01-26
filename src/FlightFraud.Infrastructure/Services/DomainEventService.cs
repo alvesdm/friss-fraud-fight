@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace FightFraud.Infrastructure.Services
 {
-
     public class DomainEventService : IDomainEventService
     {
         private readonly ILogger<DomainEventService> _logger;

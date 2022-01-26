@@ -18,15 +18,6 @@ namespace FightFraud.Web
     {
         public async static Task Main(string[] args)
         {
-            ////Read Configuration from appSettings
-            //var config = new ConfigurationBuilder()
-            //    .AddJsonFile("appsettings.json")
-            //    .Build();
-            ////Initialize Logger
-            //Log.Logger = new LoggerConfiguration()
-            //    .ReadFrom.Configuration(config)
-            //    .CreateLogger();
-
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
@@ -53,8 +44,6 @@ namespace FightFraud.Web
             }
 
             await host.RunAsync();
-
-            //Log.CloseAndFlush();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

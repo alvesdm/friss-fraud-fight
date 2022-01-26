@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using FightFraud.Application.Common.Behaviours;
+using FightFraud.Application.Common.Interfaces;
 using FightFraud.Application.Fraud.Services;
 using FightFraud.Application.Fraud.Services.NameMatchingCalculatorImplementations;
 using FluentValidation;

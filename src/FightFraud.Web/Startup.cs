@@ -3,7 +3,6 @@ using FightFraud.Application.IoC;
 using FightFraud.Infrastructure.Identity;
 using FightFraud.Infrastructure.IoC;
 using FightFraud.Web.Filters;
-using FightFraud.Web.Services;
 using FluentValidation.AspNetCore;
 using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Builder;
@@ -36,8 +35,6 @@ namespace FightFraud.Web
             services.AddInfrastructure(Configuration);
 
             services.AddDatabaseDeveloperPageExceptionFilter();
-
-            services.AddSingleton<ICurrentUserService, CurrentUserService>();
 
             services.AddControllersWithViews(options =>
                 options.Filters.Add<ApiExceptionFilterAttribute>())
@@ -73,7 +70,6 @@ namespace FightFraud.Web
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<ApplicationUser> userManager)
         {
             app.UseProblemDetails();
-            ///app.UseSerilogRequestLogging();
 
             if (env.IsDevelopment())
             {

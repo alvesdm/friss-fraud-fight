@@ -37,7 +37,6 @@ namespace FightFraud.Application.Fraud.Services
                         Person = matchingPerson
                     };
 
-                    //return Task.FromResult(result);
                     return result;
                 }
             }

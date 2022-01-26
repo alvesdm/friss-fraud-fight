@@ -1,4 +1,4 @@
-﻿using FightFraud.Application.Fraud.Services;
+﻿using FightFraud.Application.Common.Interfaces;
 using FightFraud.Domain.Entities;
 using MediatR;
 using System.Threading;
