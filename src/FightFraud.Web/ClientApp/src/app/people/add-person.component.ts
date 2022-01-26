@@ -22,7 +22,9 @@ export class AddPersonComponent {
 
   public addPerson() {
     let personModel = { ...this.person };
-    personModel.dateOfBirth = this.person.dateOfBirth.split("/").reverse().join("-");
+    if (personModel.dateOfBirth !== undefined) {
+      personModel.dateOfBirth = this.person.dateOfBirth.split("/").reverse().join("-");
+    }
 
     this._httpClient.post(this._baseUrl + 'api/people', personModel).subscribe(result => {
       this._router.navigate(['']);

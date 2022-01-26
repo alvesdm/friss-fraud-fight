@@ -3,6 +3,7 @@ using FightFraud.Application.Fraud.Results;
 using FightFraud.Application.Fraud.Services;
 using FightFraud.Domain.Entities;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,13 +21,16 @@ namespace FightFraud.Application.Fraud.Commands
     public class CalculateFraudCommandHandler : IRequestHandler<CalculateFraudCommand, CalculateFraudResult>
     {
         private readonly IAmCaching _cache;
+        private readonly ILogger<CalculateFraudCommandHandler> _logger;
         private readonly IMatchingCalculatorService _matchingCalculatorService;
 
         public CalculateFraudCommandHandler(
             IAmCaching cache,
+            ILogger<CalculateFraudCommandHandler> logger,
             IMatchingCalculatorService matchingCalculatorService)
         {
             _cache = cache;
+            _logger = logger;
             _matchingCalculatorService = matchingCalculatorService;
         }
 
@@ -46,7 +50,9 @@ namespace FightFraud.Application.Fraud.Commands
                 return fraudResult;
 
             fraudResult = await _matchingCalculatorService.CalculateProbabilityAsync(person);
-            await _cache.CreateAsync(cacheKey, fraudResult, TimeSpan.FromSeconds(5));
+            var cachingSeconds = 5;
+            _logger.LogInformation("[Caching] Command {Name} caching {@CacheKey} for {@CachingTime} seconds", typeof(CalculateFraudCommand).Name, cacheKey, cachingSeconds);
+            await _cache.CreateAsync(cacheKey, fraudResult, TimeSpan.FromSeconds(cachingSeconds));
             return fraudResult;
         }
     }
