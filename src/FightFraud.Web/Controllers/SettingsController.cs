@@ -13,6 +13,12 @@ namespace FightFraud.Web.Controllers
     [Authorize]
     public class SettingsController : ApiControllerBase
     {
+        /// <summary>
+        /// Left it here on purpose to show how would a logging be done from a controller level,
+        /// although I like following the concept of thin controllers where we just do the
+        /// bare minimum to have it as an input/output facade, living all the heavy lift 
+        /// to the mediator(pattern).
+        /// </summary>
         private readonly ILogger<SettingsController> _logger;
 
         public SettingsController(ILogger<SettingsController> logger)
