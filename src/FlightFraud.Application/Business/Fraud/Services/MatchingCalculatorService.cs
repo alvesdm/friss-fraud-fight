@@ -15,6 +15,7 @@ namespace FightFraud.Application.Business.Fraud.Services
 
         public MatchingCalculatorService(
             IApplicationDbContext context,
+            //This allows us to have Bridge Pattern in place, as we can have different implementations
             INameMatchingCalculator nameMatchingCalculator)
         {
             _context = context;
@@ -23,21 +24,17 @@ namespace FightFraud.Application.Business.Fraud.Services
 
         public async Task<CalculateFraudResult> CalculateProbabilityAsync(Person person)
         {
-            var result = new CalculateFraudResult();
-
             //If the Identification number matches then 100%
             if (!string.IsNullOrWhiteSpace(person.IdentificationNumber))
             {
                 var matchingPerson = _context.People.FirstOrDefault(p => p.IdentificationNumber == person.IdentificationNumber);
                 if (matchingPerson != null)
                 {
-                    result = new CalculateFraudResult
+                    return new CalculateFraudResult
                     {
                         MatchingProbaility = 100,
                         Person = matchingPerson
                     };
-
-                    return result;
                 }
             }
 
@@ -45,13 +42,14 @@ namespace FightFraud.Application.Business.Fraud.Services
             var doesntDateOfBirthMatch = person.IsDateOfBirthKnown() && !_context.People.Any(p => p.DateOfBirth.HasValue && p.DateOfBirth == person.DateOfBirth);
             if (doesntDateOfBirthMatch)
             {
-                result = new CalculateFraudResult
+                return new CalculateFraudResult
                 {
                     MatchingProbaility = 0
                 };
-
-                return result;
             }
+
+            //The conditions above, rule out any other condition.
+            //So, once they are not satisfied, we can go on with the ones name fuzziness
 
             return await _nameMatchingCalculator.CalculateAsync(person);
         }

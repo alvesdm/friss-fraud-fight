@@ -1,4 +1,5 @@
 ﻿using FightFraud.Application.Business.Fraud.Results;
+using FightFraud.Application.Common;
 using FightFraud.Application.Common.Interfaces;
 using FightFraud.Domain.Entities;
 using MediatR;
@@ -7,6 +8,10 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
+/// <summary>
+/// I like keeping the Command and the CommandHandler together 
+/// as it provides a better visibility as well as quick access.
+/// </summary>
 namespace FightFraud.Application.Business.Fraud.Commands
 {
     public class CalculateFraudCommand : IRequest<CalculateFraudResult>
@@ -43,16 +48,17 @@ namespace FightFraud.Application.Business.Fraud.Commands
                 IdentificationNumber = request.IdentificationNumber
             };
 
-            var cacheKey = $"{nameof(CalculateFraudCommand)}.{person.GetHashCode()}";
-            var fraudResult = await _cache.TryGetAsync<CalculateFraudResult>(cacheKey);
-            if (fraudResult != null)
-                return fraudResult;
-
-            fraudResult = await _matchingCalculatorService.CalculateProbabilityAsync(person);
             var cachingSeconds = 5;
-            _logger.LogInformation("[Caching] Command {Name} caching {@CacheKey} for {@CachingTime} seconds", typeof(CalculateFraudCommand).Name, cacheKey, cachingSeconds);
-            await _cache.CreateAsync(cacheKey, fraudResult, TimeSpan.FromSeconds(cachingSeconds));
-            return fraudResult;
+            var cacheKey = $"{nameof(CalculateFraudCommand)}.{person.GetHashCode()}";
+            var fraudProbabilityResult = await _cache.GetOrCacheAsync(
+                cacheKey,
+                async () => {
+                    _logger.LogInformation("[Caching] Command {Name} caching {@CacheKey} for {@CachingTime} seconds", typeof(CalculateFraudCommand).Name, cacheKey, cachingSeconds);
+                    return await _matchingCalculatorService.CalculateProbabilityAsync(person); 
+                },
+                TimeSpan.FromSeconds(cachingSeconds));
+
+            return fraudProbabilityResult;
         }
     }
 }

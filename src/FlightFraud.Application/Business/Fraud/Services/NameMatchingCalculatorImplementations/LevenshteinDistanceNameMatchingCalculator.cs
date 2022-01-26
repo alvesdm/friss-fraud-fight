@@ -27,10 +27,10 @@ namespace FightFraud.Application.Business.Fraud.Services.NameMatchingCalculatorI
 
             /*
              * IMPORTANT
-             * For the sake of the challenge this should be enough.
+             * For the sake of this challenge this should be enough.
              * Although I have never implemented such kind of search,
-             * I believe this is where perhaps a SP would be the approach to be taken or a custom DB function added to Linq(),
-             * to avoid performance issues.
+             * I believe this is where perhaps a SP would be the approach to be taken 
+             * or a custom DB function added to Linq() to help with performance issues by no trips back.
              * OR...
              * perhaps a background search
              */

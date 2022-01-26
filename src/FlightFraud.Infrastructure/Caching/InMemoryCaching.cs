@@ -25,16 +25,13 @@ namespace FightFraud.Infrastructure.Caching
             return await _cachingProvider.GetJsonObjectAsync<T>(key);
         }
 
-        public async Task CreateAsync<T>(string key, T value)
+        public async Task CreateAsync<T>(string key, T value, TimeSpan expireTime = default)
             where T : class
         {
-            await _cachingProvider.SetJsonObjectAsync(key, value);
-        }
-
-        public async Task CreateAsync<T>(string key, T value, TimeSpan expireTime)
-            where T : class
-        {
-            await _cachingProvider.SetJsonObjectAsync(key, value, expireTime);
+            if(expireTime != default(TimeSpan))
+                await _cachingProvider.SetJsonObjectAsync(key, value, expireTime);
+            else
+                await _cachingProvider.SetJsonObjectAsync(key, value);
         }
 
         public async Task RemoveAsync(string key)

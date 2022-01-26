@@ -10,8 +10,6 @@ namespace FightFraud.Application.Common.Interfaces
     {
         Task<T> TryGetAsync<T>(string key) 
             where T : class;
-        Task CreateAsync<T>(string key, T value) 
-            where T : class;
         Task CreateAsync<T>(string key, T value, TimeSpan expireTime)
             where T : class;
         Task RemoveAsync(string key);
