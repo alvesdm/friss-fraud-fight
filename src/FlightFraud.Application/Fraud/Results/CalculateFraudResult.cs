@@ -1,10 +1,10 @@
-﻿using FlightFraud.Domain.Entities;
+﻿using FightFraud.Domain.Entities;
 
-namespace FlightFraud.Application.Fraud.Results
+namespace FightFraud.Application.Fraud.Results
 {
     public class CalculateFraudResult
     {
-        public Person? Person { get; set; }
-        public double MatchingProbaility { get; set; }
+        public Person Person { get; set; }
+        public decimal MatchingProbaility { get; set; }
     }
 }

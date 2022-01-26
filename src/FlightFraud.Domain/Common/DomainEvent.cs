@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FlightFraud.Domain.Common
+namespace FightFraud.Domain.Common
 {
     public abstract class DomainEvent
     {

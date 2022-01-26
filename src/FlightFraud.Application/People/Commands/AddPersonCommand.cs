@@ -1,21 +1,21 @@
-﻿using FlightFraud.Application.Common.Exceptions;
-using FlightFraud.Application.Common.Interfaces;
-using FlightFraud.Domain.Entities;
-using FlightFraud.Domain.Events;
+﻿using FightFraud.Application.Common.Exceptions;
+using FightFraud.Application.Common.Interfaces;
+using FightFraud.Domain.Entities;
+using FightFraud.Domain.Events;
 using MediatR;
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Application.People.Commands
+namespace FightFraud.Application.People.Commands
 {
     public class AddPersonCommand : IRequest<Guid>
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime? DateOfBirth { get; set; }
-        public string? IdentificationNumber { get; set; }
+        public string IdentificationNumber { get; set; }
     }
 
     public class AddPersonCommandHandler : IRequestHandler<AddPersonCommand, Guid>

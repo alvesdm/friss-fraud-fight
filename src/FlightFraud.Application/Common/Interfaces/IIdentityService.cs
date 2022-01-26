@@ -1,7 +1,7 @@
-﻿using FlightFraud.Application.Models;
+﻿using FightFraud.Application.Models;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Application.Common.Interfaces
+namespace FightFraud.Application.Common.Interfaces
 {
 
     public interface IIdentityService

@@ -1,11 +1,10 @@
-﻿using FlightFraud.Domain.Entities;
+﻿using FightFraud.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace FlightFraud.Infrastructure.Persistence.Configurations
+namespace FightFraud.Infrastructure.Persistence.Configurations
 {
-
-    public class ersonConfiguration : IEntityTypeConfiguration<Person>
+    public class PersonConfiguration : IEntityTypeConfiguration<Person>
     {
         public void Configure(EntityTypeBuilder<Person> builder)
         {

@@ -29,7 +29,7 @@ export class UpdateMatchingRuleComponent {
   }
 
   private loadSavedMatchingRule() {
-    this._httpClient.get<MatchingRuleModel>(this._baseUrl + 'settings').subscribe(result => {
+    this._httpClient.get<MatchingRuleModel>(this._baseUrl + 'api/settings').subscribe(result => {
       this.matchingRule = result as MatchingRuleModel;
     }, error => {
       console.log(error);

@@ -1,5 +1,5 @@
-﻿using FlightFraud.Application.Fraud.Commands;
-using FlightFraud.Application.People.Extensions;
+﻿using FightFraud.Application.Fraud.Commands;
+using FightFraud.Application.People.Extensions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -13,13 +13,6 @@ namespace FightFraud.Web.Controllers
     [Authorize]
     public class FraudController : ApiControllerBase
     {
-        //private readonly ILogger<FraudController> _logger;
-
-        public FraudController()//ILogger<FraudController> logger)
-        {
-            //_logger = logger;
-        }
-
         [HttpPost]
         [Route("calculate")]
         public async Task<IActionResult> Post(CalculateFraudCommand command)
@@ -31,19 +24,5 @@ namespace FightFraud.Web.Controllers
                 Probability = matchingProbability.MatchingProbaility
             });
         }
-    }
-
-    public class PersonModel
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string IdentificationNumber { get; set; }
-    }
-
-    public class MatchingResult
-    {
-        public double Probability { get; set; }
-        public string Name { get; set; }
     }
 }

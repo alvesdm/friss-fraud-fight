@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Infrastructure.Identity
+namespace FightFraud.Infrastructure.Identity
 {
     public class ApplicationUser : IdentityUser
     {

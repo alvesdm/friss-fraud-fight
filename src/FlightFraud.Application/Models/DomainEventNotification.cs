@@ -1,7 +1,7 @@
-﻿using FlightFraud.Domain.Common;
+﻿using FightFraud.Domain.Common;
 using MediatR;
 
-namespace FlightFraud.Application.Models
+namespace FightFraud.Application.Models
 {
     public class DomainEventNotification<TDomainEvent> : INotification where TDomainEvent : DomainEvent
     {

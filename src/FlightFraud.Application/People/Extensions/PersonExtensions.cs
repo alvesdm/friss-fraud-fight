@@ -1,6 +1,6 @@
-﻿using FlightFraud.Domain.Entities;
+﻿using FightFraud.Domain.Entities;
 
-namespace FlightFraud.Application.People.Extensions
+namespace FightFraud.Application.People.Extensions
 {
     public static class PersonExtensions
     {

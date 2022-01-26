@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace FightFraud.Web.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class OidcConfigurationController : Controller
     {
         private readonly ILogger<OidcConfigurationController> _logger;

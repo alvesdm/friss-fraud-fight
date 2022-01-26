@@ -1,7 +1,7 @@
-﻿namespace FlightFraud.Application.Common.Interfaces
+﻿namespace FightFraud.Application.Common.Interfaces
 {
     public interface ICurrentUserService
     {
-        string? UserId { get; }
+        string UserId { get; }
     }
 }

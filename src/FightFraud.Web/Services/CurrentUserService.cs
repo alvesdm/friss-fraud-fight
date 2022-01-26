@@ -1,5 +1,5 @@
 ﻿using System.Security.Claims;
-using FlightFraud.Application.Common.Interfaces;
+using FightFraud.Application.Common.Interfaces;
 using Microsoft.AspNetCore.Http;
 
 namespace FightFraud.Web.Services

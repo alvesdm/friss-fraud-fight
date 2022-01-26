@@ -10,15 +10,12 @@
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="NinjaNye.SearchExtensions.Levenshtein" Version="3.0.1" />
+    <PackageReference Include="NinjaNye.SearchExtensions.Soundex" Version="3.0.1" />
     <PackageReference Include="Quickenshtein" Version="1.5.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FlightFraud.Domain\FlightFraud.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Fraud\Services\" />
+    <ProjectReference Include="..\FlightFraud.Domain\FightFraud.Domain.csproj" />
   </ItemGroup>
 
 </Project>

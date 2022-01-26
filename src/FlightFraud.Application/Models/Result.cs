@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FlightFraud.Application.Models
+namespace FightFraud.Application.Models
 {
     public class Result
     {

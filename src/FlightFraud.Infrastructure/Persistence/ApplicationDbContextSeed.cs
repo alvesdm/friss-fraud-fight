@@ -1,11 +1,11 @@
-﻿using FlightFraud.Domain.Entities;
-using FlightFraud.Infrastructure.Identity;
+﻿using FightFraud.Domain.Entities;
+using FightFraud.Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Infrastructure.Persistence
+namespace FightFraud.Infrastructure.Persistence
 {
 
     public static class ApplicationDbContextSeed

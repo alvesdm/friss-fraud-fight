@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FlightFraud.Application.Common.Exceptions
+namespace FightFraud.Application.Common.Exceptions
 {
     public class ForbiddenAccessException : Exception
     {

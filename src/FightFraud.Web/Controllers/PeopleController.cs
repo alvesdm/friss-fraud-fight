@@ -1,4 +1,4 @@
-﻿using FlightFraud.Application.People.Commands;
+﻿using FightFraud.Application.People.Commands;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -14,7 +14,6 @@ namespace FightFraud.Web.Controllers
         {
             var id = await Mediator.Send(command);
             return Created($"api/people/{id}", new { });
-
         }
     }
 }

@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using ValidationException = FlightFraud.Application.Common.Exceptions.ValidationException;
+using ValidationException = FightFraud.Application.Common.Exceptions.ValidationException;
 
-namespace FlightFraud.Application.Common.Behaviours
+namespace FightFraud.Application.Common.Behaviours
 {
 
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>

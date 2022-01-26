@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using FightFraud.Application.Fraud.Commands;
+using FightFraud.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,9 +11,7 @@ using System.Threading.Tasks;
 namespace FightFraud.Web.Controllers
 {
     [Authorize]
-    [ApiController]
-    [Route("[controller]")]
-    public class SettingsController : ControllerBase
+    public class SettingsController : ApiControllerBase
     {
         private readonly ILogger<SettingsController> _logger;
 
@@ -20,30 +20,21 @@ namespace FightFraud.Web.Controllers
             _logger = logger;
         }
 
+        //20 sec for the sake of ResponseCache example, as it impacts the user experience after the Put method result
+        [ResponseCache(VaryByHeader = "User-Agent", Duration = 20)] 
         [HttpGet]
-        public async Task<MatchingRuleModel> Get()
+        public async Task<MatchingRuleSettings> Get()
         {
-            return new MatchingRuleModel
-            {
-                DateOfBirthSamePercent = 1,
-                FirstNameSamePercent = 2,
-                FirstNameSimilarPercent = 3,
-                LastNameSamePercent = 4,
-            };
+            return await Mediator.Send(new GetMatchingRuleSettingsCommand());
         }
 
         [HttpPut]
-        public async Task<IActionResult> Put(MatchingRuleModel model)
+        public async Task<IActionResult> Put(UpdateMatchingRuleSettingsCommand command)
         {
+            await Mediator.Send(command);
             return NoContent();
         }
     }
 
-    public class MatchingRuleModel
-    {
-        public decimal LastNameSamePercent { get; set; }
-        public decimal FirstNameSamePercent { get; set; }
-        public decimal FirstNameSimilarPercent { get; set; }
-        public decimal DateOfBirthSamePercent { get; set; }
-    }
+
 }

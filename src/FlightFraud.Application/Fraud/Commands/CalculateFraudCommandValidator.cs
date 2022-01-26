@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace FlightFraud.Application.Fraud.Commands
+namespace FightFraud.Application.Fraud.Commands
 {
     public class CalculateFraudCommandValidator : AbstractValidator<CalculateFraudCommand>
     {

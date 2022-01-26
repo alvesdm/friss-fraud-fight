@@ -27,7 +27,13 @@ export class CalculateProbabilityComponent {
     this.setStatusMessage(CalculateStatusMessages.Calculating);
 
     let personModel = { ...this.person };
-    personModel.dateOfBirth = this.person.dateOfBirth.split("/").reverse().join("-");
+    //debugger;
+    if (personModel.dateOfBirth !== undefined) {
+    //  personModel.dateOfBirth = null;
+    //} else {
+      personModel.dateOfBirth = this.person.dateOfBirth.split("/").reverse().join("-");
+    }
+    
 
     this._httpClient.post(this._baseUrl + 'api/fraud/calculate', personModel).subscribe(result => {
       const matchingResult = result as MatchingResult;

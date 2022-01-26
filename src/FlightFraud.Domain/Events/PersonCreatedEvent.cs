@@ -1,7 +1,7 @@
-﻿using FlightFraud.Domain.Common;
-using FlightFraud.Domain.Entities;
+﻿using FightFraud.Domain.Common;
+using FightFraud.Domain.Entities;
 
-namespace FlightFraud.Domain.Events
+namespace FightFraud.Domain.Events
 {
     public class PersonCreatedEvent : DomainEvent
     {

@@ -1,7 +1,7 @@
-﻿using FlightFraud.Application.Common.Interfaces;
-using FlightFraud.Domain.Common;
-using FlightFraud.Domain.Entities;
-using FlightFraud.Infrastructure.Identity;
+﻿using FightFraud.Application.Common.Interfaces;
+using FightFraud.Domain.Common;
+using FightFraud.Domain.Entities;
+using FightFraud.Infrastructure.Identity;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +13,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Infrastructure.Persistence
+namespace FightFraud.Infrastructure.Persistence
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
     {
@@ -28,10 +28,11 @@ namespace FlightFraud.Infrastructure.Persistence
         }
 
         public DbSet<Person> People => Set<Person>();
+        public DbSet<MatchingRuleSettings> MatchingRuleSettings => Set<MatchingRuleSettings>();
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
-            var events = ChangeTracker.Entries<IHasDomainEvent>()
+            var events = ChangeTracker.Entries<IHaveDomainEvent>()
                     .Select(x => x.Entity.DomainEvents)
                     .SelectMany(x => x)
                     .Where(domainEvent => !domainEvent.IsPublished)

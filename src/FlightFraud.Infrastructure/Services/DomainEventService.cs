@@ -1,12 +1,12 @@
-﻿using FlightFraud.Application.Common.Interfaces;
-using FlightFraud.Application.Models;
-using FlightFraud.Domain.Common;
+﻿using FightFraud.Application.Common.Interfaces;
+using FightFraud.Application.Models;
+using FightFraud.Domain.Common;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Infrastructure.Services
+namespace FightFraud.Infrastructure.Services
 {
 
     public class DomainEventService : IDomainEventService

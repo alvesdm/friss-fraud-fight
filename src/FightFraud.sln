@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FightFraud.Web", "FightFraud.Web\FightFraud.Web.csproj", "{88169777-1790-46A8-B38E-5C00DE408427}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FightFraud.Web", "FightFraud.Web\FightFraud.Web.csproj", "{88169777-1790-46A8-B38E-5C00DE408427}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightFraud.Application", "FlightFraud.Application\FlightFraud.Application.csproj", "{F52E7B1B-98D5-45D1-914D-F5ADDC93484F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FightFraud.Application", "FlightFraud.Application\FightFraud.Application.csproj", "{F52E7B1B-98D5-45D1-914D-F5ADDC93484F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightFraud.Domain", "FlightFraud.Domain\FlightFraud.Domain.csproj", "{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FightFraud.Domain", "FlightFraud.Domain\FightFraud.Domain.csproj", "{3F7EE4E3-CA77-49DF-86D5-3927021F0AD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightFraud.Infrastructure", "FlightFraud.Infrastructure\FlightFraud.Infrastructure.csproj", "{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FightFraud.Infrastructure", "FlightFraud.Infrastructure\FightFraud.Infrastructure.csproj", "{EF1586AB-6618-4163-9E3E-AC1B4FABAE5B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Ports", "1 - Ports", "{06031065-5BE1-43A0-90AF-9D805AD9C694}"
 EndProject

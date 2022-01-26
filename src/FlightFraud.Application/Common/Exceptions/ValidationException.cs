@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FlightFraud.Application.Common.Exceptions
+namespace FightFraud.Application.Common.Exceptions
 {
     public class ValidationException : Exception
     {

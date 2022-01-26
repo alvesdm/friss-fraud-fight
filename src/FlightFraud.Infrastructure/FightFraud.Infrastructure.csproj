@@ -6,8 +6,14 @@
 
   <ItemGroup>
     <!--<PackageReference Include="CsvHelper" Version="15.0.10" />-->
+    <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.ApiAuthorization.IdentityServer" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.0" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="4.2.0" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+    <PackageReference Include="SimpleConcepts.Extensions.Caching" Version="1.0.8" />
+    <PackageReference Include="System.Runtime.Caching" Version="5.0.0" />
     <!--<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
@@ -15,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FlightFraud.Application\FlightFraud.Application.csproj" />
+    <ProjectReference Include="..\FlightFraud.Application\FightFraud.Application.csproj" />
   </ItemGroup>
 
 </Project>

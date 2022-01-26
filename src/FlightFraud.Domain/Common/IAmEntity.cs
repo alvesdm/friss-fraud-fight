@@ -1,4 +1,4 @@
-﻿namespace FlightFraud.Domain.Common
+﻿namespace FightFraud.Domain.Common
 {
     public interface IAmEntity<T>
     {

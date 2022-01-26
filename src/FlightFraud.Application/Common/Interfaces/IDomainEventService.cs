@@ -1,7 +1,7 @@
-﻿using FlightFraud.Domain.Common;
+﻿using FightFraud.Domain.Common;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Application.Common.Interfaces
+namespace FightFraud.Application.Common.Interfaces
 {
     public interface IDomainEventService
     {

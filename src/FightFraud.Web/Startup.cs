@@ -1,10 +1,11 @@
+using FightFraud.Application.Common.Interfaces;
+using FightFraud.Application.IoC;
+using FightFraud.Infrastructure.Identity;
+using FightFraud.Infrastructure.IoC;
 using FightFraud.Web.Filters;
 using FightFraud.Web.Services;
-using FlightFraud.Application.Common.Interfaces;
-using FlightFraud.Application.IoC;
-using FlightFraud.Infrastructure.Identity;
-using FlightFraud.Infrastructure.IoC;
 using FluentValidation.AspNetCore;
+using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -13,6 +14,9 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSwag;
+using NSwag.Generation.Processors.Security;
+using System.Linq;
 
 namespace FightFraud.Web
 {
@@ -49,11 +53,28 @@ namespace FightFraud.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddOpenApiDocument(configure =>
+            {
+                configure.Title = "FightFraud API";
+                configure.AddSecurity("JWT", Enumerable.Empty<string>(), new OpenApiSecurityScheme
+                {
+                    Type = OpenApiSecuritySchemeType.ApiKey,
+                    Name = "Authorization",
+                    In = OpenApiSecurityApiKeyLocation.Header,
+                    Description = "Type into the textbox: Bearer {your JWT token}."
+                });
+
+                configure.OperationProcessors.Add(new AspNetCoreOperationSecurityScopeProcessor("JWT"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<ApplicationUser> userManager)
         {
+            app.UseProblemDetails();
+            ///app.UseSerilogRequestLogging();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -72,6 +93,12 @@ namespace FightFraud.Web
             {
                 app.UseSpaStaticFiles();
             }
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3(settings =>
+            {
+                settings.Path = "/api";
+            });
 
             app.UseRouting();
 

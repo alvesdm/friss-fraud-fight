@@ -1,11 +1,12 @@
-using FlightFraud.Infrastructure.Identity;
-using FlightFraud.Infrastructure.Persistence;
+using FightFraud.Infrastructure.Identity;
+using FightFraud.Infrastructure.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,15 @@ namespace FightFraud.Web
     {
         public async static Task Main(string[] args)
         {
+            ////Read Configuration from appSettings
+            //var config = new ConfigurationBuilder()
+            //    .AddJsonFile("appsettings.json")
+            //    .Build();
+            ////Initialize Logger
+            //Log.Logger = new LoggerConfiguration()
+            //    .ReadFrom.Configuration(config)
+            //    .CreateLogger();
+
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
@@ -43,6 +53,8 @@ namespace FightFraud.Web
             }
 
             await host.RunAsync();
+
+            //Log.CloseAndFlush();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -50,6 +62,10 @@ namespace FightFraud.Web
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).UseSerilog((hostingContext, loggerConfiguration) =>
+                {
+                    loggerConfiguration
+                    .ReadFrom.Configuration(hostingContext.Configuration);
                 });
     }
 }

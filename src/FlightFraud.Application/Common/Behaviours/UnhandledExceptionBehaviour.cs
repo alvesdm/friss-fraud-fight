@@ -4,9 +4,8 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FlightFraud.Application.Common.Behaviours
+namespace FightFraud.Application.Common.Behaviours
 {
-
     public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : notnull
     {
         private readonly ILogger<TRequest> _logger;
@@ -26,7 +25,7 @@ namespace FlightFraud.Application.Common.Behaviours
             {
                 var requestName = typeof(TRequest).Name;
 
-                _logger.LogError(ex, "CleanArchitecture Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
+                _logger.LogError(ex, "Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
 
                 throw;
             }

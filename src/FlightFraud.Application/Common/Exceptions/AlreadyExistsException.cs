@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace FlightFraud.Application.Common.Exceptions
+namespace FightFraud.Application.Common.Exceptions
 {
     public class AlreadyExistsException<T, t> : Exception
     {
         public AlreadyExistsException()
-            :base()
+            : base()
         {
         }
 

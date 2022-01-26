@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace FlightFraud.Domain.Common
+namespace FightFraud.Domain.Common
 {
-    public interface IHasDomainEvent
+    public interface IHaveDomainEvent
     {
         List<DomainEvent> DomainEvents { get; set; }
     }

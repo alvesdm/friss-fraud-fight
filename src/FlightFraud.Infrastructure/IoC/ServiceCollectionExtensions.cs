@@ -1,20 +1,22 @@
-﻿using FlightFraud.Application.Common.Interfaces;
-using FlightFraud.Infrastructure.Identity;
-using FlightFraud.Infrastructure.Persistence;
-using FlightFraud.Infrastructure.Services;
+﻿using FightFraud.Application.Common.Interfaces;
+using FightFraud.Infrastructure.Caching;
+using FightFraud.Infrastructure.Identity;
+using FightFraud.Infrastructure.Persistence;
+using FightFraud.Infrastructure.Services;
+using Hellang.Middleware.ProblemDetails;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FlightFraud.Infrastructure.IoC
+namespace FightFraud.Infrastructure.IoC
 {
 
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddProblemDetails();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseInMemoryDatabase("FlightFraudInMemoryDb"));
 
@@ -22,16 +24,14 @@ namespace FlightFraud.Infrastructure.IoC
             services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
 
             services.AddScoped<IDomainEventService, DomainEventService>();
+            services.AddSingleton<IAmCaching, InMemoryCaching>();
 
             services
                 .AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                //.AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddIdentityServer()
                 .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
-
-            //services.AddTransient<IIdentityService, IdentityService>();
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();

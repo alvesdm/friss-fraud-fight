@@ -1,4 +1,4 @@
-﻿using FlightFraud.Application.Common.Exceptions;
+﻿using FightFraud.Application.Common.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
