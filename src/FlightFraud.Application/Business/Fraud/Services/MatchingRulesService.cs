@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FightFraud.Application.Fraud.Services
+namespace FightFraud.Application.Business.Fraud.Services
 {
     public class MatchingRuleSettingsService : IMatchingRuleSettingsService
     {
@@ -54,7 +54,7 @@ namespace FightFraud.Application.Fraud.Services
                 DateOfBirthSamePercent = DefaultDateOfBirthSamePercent
             };
 
-             _context.MatchingRuleSettings.Add(setting);
+            _context.MatchingRuleSettings.Add(setting);
             await _context.SaveChangesAsync();
 
             return setting;

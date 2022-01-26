@@ -1,7 +1,7 @@
 ﻿using FightFraud.Domain.Common;
 using MediatR;
 
-namespace FightFraud.Application.Models
+namespace FightFraud.Application.Common
 {
     public class DomainEventNotification<TDomainEvent> : INotification where TDomainEvent : DomainEvent
     {

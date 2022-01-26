@@ -1,6 +1,6 @@
 ﻿using FightFraud.Domain.Entities;
 
-namespace FightFraud.Application.Fraud.Results
+namespace FightFraud.Application.Business.Fraud.Results
 {
     public class CalculateFraudResult
     {

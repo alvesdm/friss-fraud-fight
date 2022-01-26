@@ -1,6 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { PersonModel } from './person-model';
+import { MatchingResult } from './matching-result';
+import { CalculateStatusMessages } from './calculate-status-messages';
 
 @Component({
   selector: 'app-calculate-probability',
@@ -40,7 +43,6 @@ export class CalculateProbabilityComponent {
       this.setStatusMessage(message);
     }, error => {
       this.setStatusMessage(CalculateStatusMessages.Calculating);
-      //console.error(error)
     });
   }
 
@@ -48,24 +50,3 @@ export class CalculateProbabilityComponent {
     this.statusMessage = statusMessage;
   }
 }
-
-interface PersonModel {
-  dateOfBirth: string;
-  identificationNumber: string;
-  firstName: string;
-  lastName: string;
-}
-
-interface MatchingResult {
-  probability: number;
-  name: string;
-}
-
-enum CalculateStatusMessages{
-  NotStarted = "Fill out the form and click Calculate.",
-  Calculating = "Calculating",
-  Calculated = 'This person has a $PERCENT$% matching probability with $PERSON$.',
-  Error = "Something went wrong. Check the form data and try again."
-}
-
-

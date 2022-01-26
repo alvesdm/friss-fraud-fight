@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FightFraud.Application.People.Commands
+namespace FightFraud.Application.Business.People.Commands
 {
     public class AddPersonCommand : IRequest<Guid>
     {

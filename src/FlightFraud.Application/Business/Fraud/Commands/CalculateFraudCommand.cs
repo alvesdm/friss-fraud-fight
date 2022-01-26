@@ -1,5 +1,5 @@
-﻿using FightFraud.Application.Common.Interfaces;
-using FightFraud.Application.Fraud.Results;
+﻿using FightFraud.Application.Business.Fraud.Results;
+using FightFraud.Application.Common.Interfaces;
 using FightFraud.Domain.Entities;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -7,7 +7,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FightFraud.Application.Fraud.Commands
+namespace FightFraud.Application.Business.Fraud.Commands
 {
     public class CalculateFraudCommand : IRequest<CalculateFraudResult>
     {

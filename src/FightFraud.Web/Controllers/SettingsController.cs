@@ -1,4 +1,4 @@
-﻿using FightFraud.Application.Fraud.Commands;
+﻿using FightFraud.Application.Business.Fraud.Commands;
 using FightFraud.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

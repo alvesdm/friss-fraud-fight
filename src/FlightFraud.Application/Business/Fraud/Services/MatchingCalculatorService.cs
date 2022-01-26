@@ -1,12 +1,12 @@
-﻿using FightFraud.Application.Common.Interfaces;
-using FightFraud.Application.Fraud.Results;
-using FightFraud.Application.Fraud.Services.NameMatchingCalculatorImplementations;
-using FightFraud.Application.People.Extensions;
+﻿using FightFraud.Application.Business.Fraud.Results;
+using FightFraud.Application.Business.Fraud.Services.NameMatchingCalculatorImplementations;
+using FightFraud.Application.Business.People.Extensions;
+using FightFraud.Application.Common.Interfaces;
 using FightFraud.Domain.Entities;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FightFraud.Application.Fraud.Services
+namespace FightFraud.Application.Business.Fraud.Services
 {
     public class MatchingCalculatorService : IMatchingCalculatorService
     {

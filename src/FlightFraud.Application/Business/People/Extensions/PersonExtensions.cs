@@ -1,6 +1,6 @@
 ﻿using FightFraud.Domain.Entities;
 
-namespace FightFraud.Application.People.Extensions
+namespace FightFraud.Application.Business.People.Extensions
 {
     public static class PersonExtensions
     {

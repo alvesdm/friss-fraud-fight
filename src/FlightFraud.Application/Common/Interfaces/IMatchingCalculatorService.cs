@@ -1,4 +1,4 @@
-﻿using FightFraud.Application.Fraud.Results;
+﻿using FightFraud.Application.Business.Fraud.Results;
 using FightFraud.Domain.Entities;
 using System.Threading.Tasks;
 

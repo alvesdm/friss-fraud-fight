@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AddPersonModel } from './add-person-model';
 
 @Component({
   selector: 'app-add-person',
@@ -32,9 +33,3 @@ export class AddPersonComponent {
   }
 }
 
-interface AddPersonModel {
-  dateOfBirth: string;
-  identificationNumber: string;
-  firstName: string;
-  lastName: string;
-}

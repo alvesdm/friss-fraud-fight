@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
+using FightFraud.Application.Business.Fraud.Services;
+using FightFraud.Application.Business.Fraud.Services.NameMatchingCalculatorImplementations;
 using FightFraud.Application.Common.Behaviours;
 using FightFraud.Application.Common.Interfaces;
-using FightFraud.Application.Fraud.Services;
-using FightFraud.Application.Fraud.Services.NameMatchingCalculatorImplementations;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;

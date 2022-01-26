@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace FightFraud.Application.People.Commands
+namespace FightFraud.Application.Business.People.Commands
 {
     public class AddPersonCommandValidator : AbstractValidator<AddPersonCommand>
     {

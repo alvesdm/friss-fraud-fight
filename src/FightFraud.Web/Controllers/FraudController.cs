@@ -1,5 +1,5 @@
-﻿using FightFraud.Application.Fraud.Commands;
-using FightFraud.Application.People.Extensions;
+﻿using FightFraud.Application.Business.Fraud.Commands;
+using FightFraud.Application.Business.People.Extensions;
 using FightFraud.Web.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

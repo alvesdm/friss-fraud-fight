@@ -1,5 +1,4 @@
-﻿using FightFraud.Application.Fraud.Results;
-using FightFraud.Domain.Entities;
+﻿using FightFraud.Domain.Entities;
 using System.Threading.Tasks;
 
 namespace FightFraud.Application.Common.Interfaces

@@ -1,10 +1,10 @@
-﻿using FightFraud.Application.Common.Interfaces;
-using FightFraud.Application.Fraud.Results;
+﻿using FightFraud.Application.Business.Fraud.Results;
+using FightFraud.Application.Common.Interfaces;
 using FightFraud.Domain.Entities;
 using Quickenshtein;
 using System.Threading.Tasks;
 
-namespace FightFraud.Application.Fraud.Services.NameMatchingCalculatorImplementations
+namespace FightFraud.Application.Business.Fraud.Services.NameMatchingCalculatorImplementations
 {
     public class LevenshteinDistanceNameMatchingCalculator : INameMatchingCalculator
     {

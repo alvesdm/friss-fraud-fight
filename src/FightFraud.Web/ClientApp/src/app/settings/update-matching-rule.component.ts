@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { MatchingRuleModel } from './matching-rule-model';
 
 @Component({
   selector: 'app-update-matching-rule',
@@ -46,9 +47,3 @@ export class UpdateMatchingRuleComponent {
   }
 }
 
-interface MatchingRuleModel {
-  lastNameSamePercent: number;
-  firstNameSamePercent: number;
-  firstNameSimilarPercent: number;
-  dateOfBirthSamePercent: number;
-}

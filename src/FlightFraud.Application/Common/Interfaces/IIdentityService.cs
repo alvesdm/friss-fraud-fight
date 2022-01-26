@@ -1,5 +1,4 @@
-﻿using FightFraud.Application.Models;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace FightFraud.Application.Common.Interfaces
 {

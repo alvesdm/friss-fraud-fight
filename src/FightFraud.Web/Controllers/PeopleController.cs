@@ -1,4 +1,4 @@
-﻿using FightFraud.Application.People.Commands;
+﻿using FightFraud.Application.Business.People.Commands;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
