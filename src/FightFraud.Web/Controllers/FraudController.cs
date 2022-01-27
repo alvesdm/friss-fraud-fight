@@ -11,9 +11,17 @@ using System.Threading.Tasks;
 
 namespace FightFraud.Web.Controllers
 {
+    /// <summary>
+    /// Provides with methods to deal with Fraud.
+    /// </summary>
     [Authorize]
     public class FraudController : ApiControllerBase
     {
+        /// <summary>
+        /// Calculates the fraud probability of a provided person, against the existing ones in the database.
+        /// </summary>
+        /// <param name="command">The info related to person to be assessed.</param>
+        /// <returns>The probability of matching with an existing person in the database.</returns>
         [HttpPost]
         [Route("calculate")]
         public async Task<IActionResult> Post(CalculateFraudCommand command)
